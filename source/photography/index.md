@@ -3,7 +3,7 @@ layout: "photography"
 title: "相册"
 date: 2019-12-08 20:48:22
 description: "The greatness of photography is to fix the moment into eternity, Attach importance to surprise you inadvertently, this is one of the photography's charm!"
-header-img: "img/header_img/photography-bg.jpeg"
+header-img: "img/header_img/photography-bg.jpg"
 comments: true
 ---
 ![花](photo/flower.jpg)

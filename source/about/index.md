@@ -1,9 +1,9 @@
 ---
 layout: "about"
-title: "About"
+title: "关于"
 date: 2016-04-21 04:48:33
 description: "When you get up early and work hard, when you stay up late, when you feel too tired to stand up again, but still support the night when you get up, that is the power of dreams."
-header-img: "img/header_img/Iron-Man-3.jpg"
+header-img: "img/header_img/about-bg.jpg"
 comments: true
 ---
 

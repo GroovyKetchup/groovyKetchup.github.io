@@ -1,6 +1,6 @@
 ---
 layout: "categories"
-title: "Categories"
+title: "分类"
 header-img: "img/header_img/categories-bg.jpg"
 comments: false
 date: 2017-03-20 20:49:56
