@@ -25,34 +25,34 @@ class Musics {
     constructor() {
         this.songs = [{
                 id: 1,
-                title: '把孤独当作晚餐',
-                singer: '范茹',
-                songUrl: '/music/song/把孤独当作晚餐.mp3',
-                imageUrl: '/music/img/把孤独当作晚餐.jpg'
+                title: '梅卡德尔',
+                singer: '梅卡德尔',
+                songUrl: '/music/song/梅卡德尔.mp3',
+                imageUrl: '/music/img/梅卡德尔.jpg'
             },{
                 id: 2,
-                title: 'Home',
-                singer: '王诗安',
-                songUrl: '/music/song/Home_王诗安.mp3',
-                imageUrl: '/music/img/home.jpg'
+                title: '河流',
+                singer: '蛙池WaChi',
+                songUrl: '/music/song/河流.mp3',
+                imageUrl: '/music/img/河流.jpg'
             },{
                 id: 3,
-                title: 'Stupid',
-                singer: 'Tone Damli',
-                songUrl: '/music/song/Stupid_Tone Damli.mp3',
-                imageUrl: '/music/img/stupid.jpg'
+                title: '迷恋',
+                singer: '梅卡德尔',
+                songUrl: '/music/song/迷恋.mp3',
+                imageUrl: '/music/img/梅卡德尔.jpg'
             },{
                 id: 4,
-                title: '九张机',
-                singer: '叶炫清',
-                songUrl: '/music/song/九张机_叶炫清.mp3',
-                imageUrl: '/music/img/九张机.jpg'
-            },{
+                title: '我是K',
+                singer: '梅卡德尔',
+                songUrl: '/music/song/我是K.mp3',
+                imageUrl: '/music/img/梅卡德尔.jpg'
+          },{
                 id: 5,
-                title: '不醉不会',
-                singer: '田馥甄',
-                songUrl: '/music/song/不醉不会_田馥甄.mp3',
-                imageUrl: '/music/img/不醉不会.jpg'
+                title: '公路之光',
+                singer: '腰乐队',
+                songUrl: '/music/song/公路之光.mp3',
+                imageUrl: '/music/img/公路之光.jpg'
             }
         ]
     }

@@ -1,14 +1,16 @@
 ---
 layout: "about"
 title: "关于"
-date: 2016-04-21 04:48:33
-description: "When you get up early and work hard, when you stay up late, when you feel too tired to stand up again, but still support the night when you get up, that is the power of dreams."
+date: 2021-03-05 04:48:33
+description: "Be the color in the dark"
 header-img: "img/header_img/about-bg.jpg"
 comments: true
 ---
 
-> The scenery we often see is that a person always looks up and envy the happiness of others, but finds that he is being looked up and envious. In fact, everyone is happy, but your happiness is often in the eyes of others.
+> I'm GroovyKetchup.
+> 创造是一件很神奇的东西，我喜欢创造，更喜欢所有可视化的创造，所以我选择了成为一名前端工程师。这个博客或许将会记录着我前端生涯的成长和经历。
 > &nbsp;
-> Life is a one-way trip. Even if there are some regrets, we have no chance to start all over again. It is better to smile and cherish the future than to confuse the past, because life is not as if.
+> 关于GroovyKetchup这个名字，中文可以译为有趣的番茄酱或者绝妙的番茄酱。因为姓方，小时候有时被人叫成番茄酱，又因为想成为很酷的人，所以就有了这个名字。
 > &nbsp;
-> Don't think too much, just do it now.
+> 如果你也能从这个博客得到些什么，不用谢。
+> (这样说话会不会很酷？  有时候人中二点没什么不好的。)
