@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A blog of GroovyKetchup">
+    <meta name="keyword"  content="blog, GroovyKetchup, GroovyKetchup&#39;s Blog">
+    <link rel="shortcut icon" href="/img/icon.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          git - GroovyKetchup&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://groovyKetchup.github.io/2021/03/05/git/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Introduction-To-GIT.png')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/null');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#git" title="git">git</a>
+                            
+                        </div>
+                        <h1>git</h1>
+                        <h2 class="subheading">关于git你所要了解的都在这</h2>
+                        <span class="meta">
+                            Posted by GroovyKetchup on
+                            2021-03-05
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">2.1k</span> and
+                                Reading Time <span class="post-count">8</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">GroovyKetchup&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">关于</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">归档</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">分类</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">相册</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install git -g</span><br></pre></td></tr></table></figure>
+<h1 id="git设定"><a href="#git设定" class="headerlink" title="git设定"></a>git设定</h1><p><strong>可在.gitconfig文件直接修改或者使用config命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"&lt;用户名&gt;"</span></span><br><span class="line">$ git config --global user.email <span class="string">"&lt;电子邮件&gt;"</span></span><br><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>生成SSH: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">'上面的邮箱'</span></span><br><span class="line"></span><br><span class="line">-t 类型 一般都为rsa</span><br><span class="line">-f 生成的SSH文件名</span><br></pre></td></tr></table></figure>
+<p>将生成的公钥添加到你的github上后进行测试：</p>
+<p>（gitee同理，网址改为git@gitee.com即可）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>新创建目录后把目录移动到本地Git数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir <span class="built_in">test</span></span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p>若已存在的项目则直接git初始化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p>创建README.md（是否创建视需求）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ touch README.md</span><br><span class="line">$ git add README.md</span><br><span class="line">$ git commit -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
+<h2 id="关联远程数据库"><a href="#关联远程数据库" class="headerlink" title="关联远程数据库"></a>关联远程数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add &lt;name&gt; &lt;url&gt;</span><br><span class="line">&lt;name&gt; 为远程数据库的别名，一般为origin</span><br><span class="line"></span><br><span class="line">$ git remote add origin https://[your_space_id].backlogtool.com/git/[your_project_key]/test.git</span><br></pre></td></tr></table></figure>
+<h1 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status //确认工作数和索引的状态</span><br></pre></td></tr></table></figure>
+<h1 id="添加进索引区"><a href="#添加进索引区" class="headerlink" title="添加进索引区"></a>添加进索引区</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add &lt;file&gt;..  //指定加入索引的文件  </span><br><span class="line">$ git add t.txt b.txt //多个文件用空格分隔</span><br><span class="line">$ git add .  //将所有文件添加到索引</span><br></pre></td></tr></table></figure>
+<h1 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"提交信息"</span>  //提交代码并发送信息</span><br></pre></td></tr></table></figure>
+<h1 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p>GUI查看提交记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gitk</span><br></pre></td></tr></table></figure>
+<h1 id="命令别名设置"><a href="#命令别名设置" class="headerlink" title="命令别名设置"></a>命令别名设置</h1><p>例如commit设置为gc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.gc commit</span><br></pre></td></tr></table></figure>
+<h1 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h1><p>HEAD： 指的是现在使用中的分支的最后一次更新</p>
+<p>HEAD~ ：指定HEAD之前的提交记录        </p>
+<p>HEAD^：指定那个为根目录</p>
+<h1 id="push"><a href="#push" class="headerlink" title="push"></a>push</h1><p>-u :  可以下次推送时省略分支名称</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin branchName  //同步新的分支到远程数据库</span><br><span class="line"></span><br><span class="line">$ git push  //同步所处分支的代码到远程数据库对应的分支</span><br></pre></td></tr></table></figure>
+<h1 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h1><p>获取远程数据库的变更日志，更新本地数据库（若本地数据有修改，也会同时提交到远程数据库）（多人作业）<br>repository省略时默认为origin</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git pull &lt;repository&gt; &lt;refspec&gt;... </span><br><span class="line"></span><br><span class="line">$ git fetch 获取远程数据库的更新内容，并放入FETCH_HEAD中，而不是合并</span><br></pre></td></tr></table></figure>
+<h1 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h1><p>克隆远程数据库（克隆的数据库的变更履历也会被复制）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> &lt;repository&gt; &lt;directory&gt;  </span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://nulab.backlog.jp/git/BLG/tutorial.git tutorial2</span><br></pre></td></tr></table></figure>
+<h1 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h1><p>分支分为： merge分支 (一般为master）和Topic分支</p>
+<p>可简单理解为主分支和其他分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch  //查看git分支</span><br><span class="line">$ git branch  &lt;branchnaem&gt;  //创建新分支</span><br><span class="line">$ git branch -d &lt;branchname&gt;  //删除分支</span><br></pre></td></tr></table></figure>
+<h1 id="checkout"><a href="#checkout" class="headerlink" title="checkout"></a>checkout</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout  //切换分支</span><br><span class="line">$ git checkout -b branchName  //切换并创建新分支</span><br></pre></td></tr></table></figure>
+<p>如果处于索引区的未提交内容及新添加文件，在checkckout时会移动到切换的新分支</p>
+<p>如果所要切换的新分支的索引区也以及存在相同的修改文件，则会报错，此时解决方法：</p>
+<p>①先提交后才能切换到新分支</p>
+<p>②加数据存储到stash（临时存储）</p>
+<h1 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h1><p>合并分支分为两种类型</p>
+<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p>特点： 保持修改内容的历史记录，历史记录复杂</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge branchName</span><br></pre></td></tr></table></figure>
+<p>fast-forward:</p>
+<p><img src="ff.png" alt="alt fast-forward"></p>
+<p>non fast-forward:</p>
+<p><img src="nff.png" alt="alt non fast-forward"></p>
+<h2 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h2><p>特点： 历史记录简单</p>
+<p>操作：</p>
+<ol>
+<li><p>topic分支更新merge分支的最新内容，rebase</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>merge分支导入topic分支内容，先rabase后merge</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout topic</span><br><span class="line">$ git rebase master</span><br><span class="line">$ git add .</span><br><span class="line">$ git rebase --<span class="built_in">continue</span></span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge topic</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>rebase的时候，修改冲突后的提交不是使用commit命令，而是执行rebase命令指定 —continue选项。若要取消rebase，指定 —abort选项。</p>
+<p><img src="rb1.png" alt="alt rb1"></p>
+<p><img src="rb2.png" alt="alt rb2"></p>
+<h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><p>轻标签：添加名称    </p>
+<p>本地暂时或一次性使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git tag &lt;tagname&gt;  //添加轻标签</span><br><span class="line">$ git tag //显示标签列表</span><br></pre></td></tr></table></figure>
+<p>注解标签：添加名称 添加注解 添加签名</p>
+<p>一般发布时使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a &lt;tagname&gt; //添加注解标签  启动编辑区</span><br><span class="line">$ git tag -am <span class="string">"注解"</span> &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -d &lt;tagname&gt; //删除标签</span><br><span class="line">$ git tag -n //显示标签的列表和注解</span><br><span class="line">$ git <span class="built_in">log</span> --decorate //显示包含标签资料的历史记录</span><br></pre></td></tr></table></figure>
+<h1 id="修改最近的提交"><a href="#修改最近的提交" class="headerlink" title="修改最近的提交"></a>修改最近的提交</h1><p>修改同一个分支最近的提交内容和注解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --amend</span><br></pre></td></tr></table></figure>
+<p>主要作用：</p>
+<pre><code>* 添加最近提交时漏掉的档案
+* 修改最近提交的注解
+</code></pre><h1 id="取消过去的提交"><a href="#取消过去的提交" class="headerlink" title="取消过去的提交"></a>取消过去的提交</h1><p>创建要否定的提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git revert HEAD</span><br></pre></td></tr></table></figure>
+<p>主要作用：</p>
+<ul>
+<li>安全地取消过去发布的提交</li>
+</ul>
+<h1 id="遗弃提交"><a href="#遗弃提交" class="headerlink" title="遗弃提交"></a>遗弃提交</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard HEAD~~</span><br></pre></td></tr></table></figure>
+<p>模式（默认mixed）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式名称</th>
+<th style="text-align:center">HEAD的位置</th>
+<th style="text-align:center">索引</th>
+<th style="text-align:center">工作树</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">soft</td>
+<td style="text-align:center">修改</td>
+<td style="text-align:center">不修改</td>
+<td style="text-align:center">不修改</td>
+</tr>
+<tr>
+<td style="text-align:center">mixed</td>
+<td style="text-align:center">修改</td>
+<td style="text-align:center">修改</td>
+<td style="text-align:center">不修改</td>
+</tr>
+<tr>
+<td style="text-align:center">hard</td>
+<td style="text-align:center">修改</td>
+<td style="text-align:center">修改</td>
+<td style="text-align:center">修改</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>主要作用：</p>
+<ul>
+<li>复原修改过的索引的状态(mixed)</li>
+<li>彻底取消最近的提交(hard)</li>
+<li>只取消提交(soft)</li>
+</ul>
+<p>取消reset:</p>
+<p>在reset之前的提交可以参照ORIG_HEAD。Reset错误的时候，在ORIG_HEAD上reset 就可以还原到reset前的状态。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard ORIG_HEAD</span><br></pre></td></tr></table></figure>
+<h1 id="提取提交"><a href="#提取提交" class="headerlink" title="提取提交"></a>提取提交</h1><p>把topic中的某个提交移动到master</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git cherry-pick 99dead2(提交记录commit  可在<span class="built_in">log</span>中查找到)</span><br></pre></td></tr></table></figure>
+<p>主要作用：</p>
+<ul>
+<li>把弄错分支的提交移动到正确的地方</li>
+<li>从其他分支复制指定的提交，然后导入到现在的分支</li>
+</ul>
+<h1 id="改写提交的历史记录"><a href="#改写提交的历史记录" class="headerlink" title="改写提交的历史记录"></a>改写提交的历史记录</h1><p>改写、替换、删除或合并提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase -i HEAD~~</span><br><span class="line"></span><br><span class="line">进入编辑器（显示从HEAD到HEAD~~之间的提交记录【包括HEAD，不包括HEAD~~】）</span><br><span class="line"></span><br><span class="line">pick 9a54fd4 添加commit的说明</span><br><span class="line">pick 0d4a808 添加pull的说明</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase 326fc9f..0d4a808 onto d286baa</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Commands:</span></span><br><span class="line"><span class="comment">#  p, pick = use commit</span></span><br><span class="line"><span class="comment">#  r, reword = use commit, but edit the commit message</span></span><br><span class="line"><span class="comment">#  e, edit = use commit, but stop for amending</span></span><br><span class="line"><span class="comment">#  s, squash = use commit, but meld into previous commit</span></span><br><span class="line"><span class="comment">#  f, fixup = like "squash", but discard this commit's log message</span></span><br><span class="line"><span class="comment">#  x, exec = run command (the rest of the line) using shell</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span></span><br><span class="line"><span class="comment"># However, if you remove everything, the rebase will be aborted.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line">//汇合过去的两次提交：把第二行pick改为squash</span><br><span class="line">//合并后显示提交信息编辑器</span><br><span class="line"></span><br><span class="line">//修改最近一次提交：把第一行pick改为edit  后修改过的提交呈现退出状态  </span><br><span class="line">//打开此次提交的文件，适当修改这次提交的内容 </span><br><span class="line">//git add sample.txt</span><br><span class="line">//git commit --amend</span><br><span class="line">//git rebase --<span class="built_in">continue</span></span><br><span class="line">//可能出现冲突，修改冲突内容后再add 和  rebase --<span class="built_in">continue</span> 无需再次commit</span><br><span class="line">//若要中途停止rebase:rebase --abort</span><br><span class="line"></span><br><span class="line">//多个edit  重复执行上面操作</span><br><span class="line"></span><br><span class="line">//可以用git reset --hard ORIG_HEAD复原到rebase之前的状态</span><br></pre></td></tr></table></figure>
+<p>主要作用：</p>
+<ul>
+<li>在push之前，重新输入正确的提交注解</li>
+<li>清楚地汇合内容含义相同的提交。</li>
+<li>添加最近提交时漏掉的档案</li>
+</ul>
+<h1 id="汇合分支上的提交，然后一同合并到分支"><a href="#汇合分支上的提交，然后一同合并到分支" class="headerlink" title="汇合分支上的提交，然后一同合并到分支"></a>汇合分支上的提交，然后一同合并到分支</h1><p>merge的特殊选项: squash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge --squash issue1</span><br></pre></td></tr></table></figure>
+<p><img src="squash.png" alt="alt squash"></p>
+<h1 id="Git的标准注解："><a href="#Git的标准注解：" class="headerlink" title="Git的标准注解："></a>Git的标准注解：</h1><p>第一行： 提交修改内容的摘要</p>
+<p>第二行： 空行</p>
+<p>第三行以后： 修改的理由</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol>
+<li>让Git以彩色显示</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global color.ui auto</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用命令行(Git Bash)让含非ASCII字符的文件名正确显示</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global core.quotepath off</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>若在Windows使用命令行，您只能输入ASCII字符。所以，如果您的提交信息包含非ASCII字符，请不要使用-m选项，而要用外部编辑器输入。</p>
+<p>外部编辑器必须能与字符编码UTF-8和换行码LF兼容。</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global core.editor <span class="string">"\"[使用编辑区的路径]\""</span></span><br></pre></td></tr></table></figure>
+<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><p>不同类别的修改 (如：Bug修复和功能添加) 要尽量分开提交，以方便以后从历史记录里查找特定的修改内容。</p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ol>
+<li><p>github无法访问或者访问速度慢</p>
+<p>解决方法：<a href="https://zhuanlan.zhihu.com/p/114306238" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/114306238</a></p>
+</li>
+<li><p>使用git clone出现下列错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">remote: Enumerating objects: 832, <span class="keyword">done</span>.</span><br><span class="line">remote: Counting objects: 100% (832/832), <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (484/484), <span class="keyword">done</span>.</span><br><span class="line">error: RPC failed; curl 56 OpenSSL SSL_read: Connection was reset, errno 10054</span><br><span class="line">fatal: the remote end hung up unexpectedly</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: index-pack failed</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   解决方法： </p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config http.sslVerify <span class="string">"false"</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>管理不同的git账号（gitlab、github、gitee等）</p>
+<ul>
+<li><p>全局name和email不设置</p>
+</li>
+<li><p>为不同的账号配置不同的ssh（生成SSH时用不同的文件名）</p>
+</li>
+<li><p>在SSH存放文件下添加config文件</p>
+<p>config设置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># github</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~&#x2F;.ssh&#x2F;github_id_rsa</span><br><span class="line">User yourusername</span><br><span class="line"> </span><br><span class="line"># gitee</span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">User yourusername</span><br></pre></td></tr></table></figure>
+<p>最后SSH文件夹如下：</p>
+<p><img src="config.png" alt="alt config"></p>
+</li>
+<li><p>name、email本地仓库局部设置(独立分开，不同的项目根据需要设置不同的远程仓库和账号)</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>笔记撰写: GroovyKetchup</p>
+<p>部分图片来源于：猴子都能懂的GIT入门(backlog)</p>
+<p>更加详细的git教程可以访问：<a href="https://backlog.com/git-tutorial/cn/intro/intro1_1.html" target="_blank" rel="noopener">https://backlog.com/git-tutorial/cn/intro/intro1_1.html</a></p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/02/28/cookie/" data-toggle="tooltip" data-placement="top" title="cookie">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                
+
+<link rel="stylesheet" href="/css/music-player/fonts/iconfont.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/reset.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/player.css">
+
+
+
+<div class="music-player">
+    <audio class="music-player__audio" ></audio>
+    <div class="music-player__main">
+        <div class="music-player__blur"></div>
+        <div class="music-player__disc">
+            <div class="music-player__image">
+                <img width="100%" src="" alt="">
+            </div>
+            <div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div>
+        </div>
+        <div class="music-player__controls">
+            <div class="music__info">
+                <h3 class="music__info--title">...</h3>
+                <p class="music__info--singer">...</p>
+            </div>
+            <div class="player-control">
+                <div class="player-control__content">
+                    <div class="player-control__btns">
+                        <div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+                        <div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+                        <div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+                        <div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+                    </div>
+                    <div class="player-control__volume">
+                        <div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+                        <div class="control__volume--progress player_progress"></div>
+                    </div>
+                </div>
+                <div class="player-control__content">
+                    <div class="player__song--progress player_progress"></div>
+                    <div class="player__song--timeProgess nowTime">00:00</div>
+                    <div class="player__song--timeProgess totalTime">00:00</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/music-player/utill.js"></script>
+
+
+<script src="/js/music-player/jquery.min.js"></script>
+
+
+<script src="/js/music-player/player.js"></script>
+
+
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git安装"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git安装</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git设定"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">git设定</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SSH"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">SSH</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#初始化"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#关联远程数据库"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关联远程数据库</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#查看"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">查看</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#添加进索引区"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">添加进索引区</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#提交"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">提交</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#查看提交记录"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">查看提交记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#命令别名设置"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">命令别名设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HEAD"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">HEAD</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#push"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">push</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#pull"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">pull</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#clone"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">clone</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#branch"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">branch</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#checkout"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">checkout</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#合并"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">合并</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#merge"><span class="toc-nav-number">14.1.</span> <span class="toc-nav-text">merge</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#rebase"><span class="toc-nav-number">14.2.</span> <span class="toc-nav-text">rebase</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#标签"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">标签</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#修改最近的提交"><span class="toc-nav-number">16.</span> <span class="toc-nav-text">修改最近的提交</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#取消过去的提交"><span class="toc-nav-number">17.</span> <span class="toc-nav-text">取消过去的提交</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#遗弃提交"><span class="toc-nav-number">18.</span> <span class="toc-nav-text">遗弃提交</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#提取提交"><span class="toc-nav-number">19.</span> <span class="toc-nav-text">提取提交</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#改写提交的历史记录"><span class="toc-nav-number">20.</span> <span class="toc-nav-text">改写提交的历史记录</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#汇合分支上的提交，然后一同合并到分支"><span class="toc-nav-number">21.</span> <span class="toc-nav-text">汇合分支上的提交，然后一同合并到分支</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Git的标准注解："><span class="toc-nav-number">22.</span> <span class="toc-nav-text">Git的标准注解：</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#其他"><span class="toc-nav-number">23.</span> <span class="toc-nav-text">其他</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#注意点"><span class="toc-nav-number">24.</span> <span class="toc-nav-text">注意点</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#常见问题"><span class="toc-nav-number">25.</span> <span class="toc-nav-text">常见问题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#声明"><span class="toc-nav-number">26.</span> <span class="toc-nav-text">声明</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#git" title="git">git</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://8.136.1.191/myblog" target="_blank">hongXing&#39;s Blog</a></li>
+                    
+                        <li><a href="https://github.com/hongXingID" target="_blank">hongXing&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/GroovyKetchup">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/现场怪">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; GroovyKetchup 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=GroovyKetchup&repo=groovyKetchup.github.io&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://groovyKetchup.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

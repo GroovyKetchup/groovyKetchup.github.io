@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://groovyKetchup.github.io/2019/11/01/Hexo-Theme-Snail/</loc>
-    <lastmod>2021-03-05</lastmod>
+    <loc>https://groovyKetchup.github.io/2021/02/20/promise/</loc>
+    <lastmod>2021-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://groovyKetchup.github.io/2021/02/28/cookie/</loc>
+    <lastmod>2021-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://groovyKetchup.github.io/2021/03/05/git/</loc>
+    <lastmod>2021-03-06</lastmod>
   </url>
 </urlset> 
